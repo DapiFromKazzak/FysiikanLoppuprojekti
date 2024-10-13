@@ -17,7 +17,8 @@ st.write("Askeleen keskipituus on ollut fourier analyysin perusteella 0.71 m")
 
 
 def suodatetutAskeleet():
-    df_step = pd.read_csv('LinearAcceleration.csv')
+    # df_step = pd.read_csv('LinearAcceleration.csv')
+    df_step = pd.read_csv('https://raw.githubusercontent.com/DapiFromKazzak/FysiikanLoppuprojekti/refs/heads/main/LinearAcceleration.csv')
 
     # Suodatetaan datasta selvästi kävelytaajuutta suurempitaajuuksiset vaihtelut pois
     # Filtteri: 
@@ -58,7 +59,8 @@ def suodatetutAskeleet():
     return [np.floor(jaksot/2)]
 
 def fourierAnalyysiAskeleet():
-    df = pd.read_csv('LinearAcceleration.csv')
+    # df = pd.read_csv('LinearAcceleration.csv')
+    df = pd.read_csv('https://raw.githubusercontent.com/DapiFromKazzak/FysiikanLoppuprojekti/refs/heads/main/LinearAcceleration.csv')
     f = df['Linear Acceleration z (m/s^2)']     # Valittu signaali
     t = df['Time (s)']                          # Aika
     N = len(df)                                 # Havaintojen määrä
@@ -96,7 +98,8 @@ def haversine(lon1, lat1, lon2, lat2): # Kahden pisteen koordinaatit
 
 def GPS():
     st.write("Kävelyn reitti kartalla")
-    df = pd.read_csv("Location.csv")
+    # df = pd.read_csv("Location.csv")
+    df = pd.read_csv("https://raw.githubusercontent.com/DapiFromKazzak/FysiikanLoppuprojekti/refs/heads/main/Location.csv")
 
     start_lat = df['Latitude (°)'].mean()
     start_long = df['Longitude (°)'].mean()
